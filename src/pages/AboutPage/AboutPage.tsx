@@ -1,16 +1,18 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { pageVariants, pageTransition } from "../../utils/page-transitions";
 
 function About() {
   return (
     <motion.div
-      className="container text-center"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 3 }}
+      className="page"
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={pageTransition}
     >
-    <div className="container text-center">
+    <div className="text-center">
       <h1>About Page</h1>
 
       <p>

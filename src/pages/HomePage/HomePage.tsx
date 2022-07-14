@@ -1,17 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { pageTransition, pageVariants } from "../../utils/page-transitions";
 
 
 function HomePage() {
-    return (
-        <motion.div
-      className="container text-center  bg-black"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 3 }}
+  return (
+    <motion.div
+      className="page"     
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={pageTransition}
     >
-      <div className="container text-center">
+      <div className="text-center">
         <h1>Home page</h1>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi, qui.
@@ -19,8 +21,8 @@ function HomePage() {
           perspiciatis vitae unde? In quibusdam nulla perspiciatis laboriosam ex.
         </p>
       </div>
-      </motion.div>
-    );
-  }
-  
-  export default HomePage;
+    </motion.div>
+  );
+}
+
+export default HomePage;
